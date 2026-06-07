@@ -89,9 +89,11 @@
       "target": [
         "dmg"
       ],
-      "identity": null,
+      "identity": "-",
       "gatekeeperAssess": false,
-      "hardenedRuntime": false
+      "hardenedRuntime": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
     },
     "dmg": {
       "title": "MDoCards ${version}",

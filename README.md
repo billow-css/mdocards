@@ -68,6 +68,21 @@ npm run dist:mac
 >
 > 没有 Mac 时，可推送代码后在 GitHub Actions 手动运行 **Release macOS DMG** 工作流，从 Artifacts 下载 DMG。
 
+### macOS 提示「已损坏，无法打开」？
+
+GitHub Actions 构建的安装包**未经 Apple 公证**，从网络下载后 macOS 会拦截，这并不代表程序真的损坏。
+
+**解决方法（任选其一）：**
+
+1. **右键** `MDoCards.app` → **打开** → 弹窗中再点 **打开**
+2. 终端执行（安装到应用程序后）：
+   ```bash
+   xattr -cr /Applications/MDoCards.app
+   ```
+3. **系统设置** → **隐私与安全性** → 找到被拦截提示 → **仍要打开**
+
+若要完全消除警告，需要 Apple 开发者账号（$99/年）做代码签名与公证。
+
 ### 网页静态资源
 
 ```bash
