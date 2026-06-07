@@ -1,0 +1,69 @@
+.status-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 28px;
+  padding: 0 14px;
+  background: var(--toolbar-bg);
+  border-top: 1px solid var(--toolbar-border);
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+  color: var(--toolbar-text-muted);
+}
+
+.status-bar__section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.status-bar__doc {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--toolbar-text);
+  font-weight: 600;
+}
+
+.status-bar__pill {
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.status-bar__pill--dirty {
+  background: rgba(234, 179, 8, 0.18);
+  color: #ca8a04;
+}
+
+[data-theme='dark'] .status-bar__pill--dirty {
+  color: #facc15;
+}
+
+.status-bar__pill--saved {
+  background: rgba(34, 197, 94, 0.14);
+  color: #16a34a;
+}
+
+[data-theme='dark'] .status-bar__pill--saved {
+  color: #4ade80;
+}
+
+.status-bar__metrics span::after {
+  content: '·';
+  margin: 0 8px;
+  opacity: 0.45;
+}
+
+.status-bar__metrics span:last-child::after {
+  content: '';
+  margin: 0;
+}

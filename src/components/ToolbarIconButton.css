@@ -1,0 +1,48 @@
+.toolbar-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--toolbar-icon-text);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+
+.toolbar-icon-btn:hover:not(:disabled) {
+  background: var(--toolbar-icon-bg-hover);
+  color: var(--toolbar-icon-text-hover);
+}
+
+.toolbar-icon-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.toolbar-icon-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.toolbar-icon-btn--primary {
+  background: var(--toolbar-primary-bg);
+  color: var(--toolbar-primary-text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.toolbar-icon-btn--primary:hover:not(:disabled) {
+  background: var(--toolbar-primary-bg-hover);
+  color: var(--toolbar-primary-text);
+}
+
+.toolbar-icon-btn--danger:hover:not(:disabled) {
+  background: var(--toolbar-danger-bg-hover);
+  color: var(--toolbar-danger-text);
+}

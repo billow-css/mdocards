@@ -1,0 +1,53 @@
+.card-tray {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.card-tray__titlebar {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px 8px 0 0;
+  background: var(--tray-titlebar-bg);
+  border: 1px solid var(--tray-border);
+  border-bottom: none;
+  color: var(--tray-title-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.card-tray__titlebar:active {
+  cursor: grabbing;
+}
+
+.card-tray__title-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-tray__title-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.card-tray__body {
+  position: absolute;
+  inset: 28px 0 0 0;
+  border-radius: 0 0 10px 10px;
+  border: 1px dashed var(--tray-border);
+  background: var(--tray-body-bg);
+  pointer-events: none;
+}

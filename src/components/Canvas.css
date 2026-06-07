@@ -1,0 +1,99 @@
+.canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+  padding-bottom: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--canvas-bg);
+  background-image:
+    radial-gradient(circle, var(--canvas-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  cursor: default;
+}
+
+.canvas--marqueuing,
+.canvas--marqueuing * {
+  user-select: none;
+  cursor: crosshair;
+}
+
+.canvas--pan-ready {
+  cursor: grab;
+}
+
+.canvas--pan-ready:active {
+  cursor: grabbing;
+}
+
+.canvas--connecting {
+  cursor: crosshair;
+}
+
+.connection-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.connection-layer__edge-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 14;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.connection-layer__edge {
+  fill: none;
+  stroke: var(--connection-stroke);
+  stroke-width: 2;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.connection-layer__edge--selected {
+  stroke: var(--connection-stroke-selected);
+  stroke-width: 3;
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(113, 113, 122, 0.45));
+}
+
+.connection-layer__edge--draft {
+  stroke-dasharray: 6 4;
+  opacity: 0.8;
+}
+
+.canvas__world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform-origin: 0 0;
+  will-change: transform;
+  z-index: 1;
+}
+
+.card {
+  z-index: 2;
+}
+
+.canvas__marquee {
+  position: absolute;
+  z-index: 4;
+  box-sizing: border-box;
+  border: 1px solid var(--marquee-border);
+  background: var(--marquee-fill);
+  pointer-events: none;
+}
+
+
+.canvas__file-input {
+  display: none;
+}

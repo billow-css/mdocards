@@ -1,0 +1,63 @@
+.empty-canvas {
+  position: fixed;
+  inset: 48px 0 28px 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.empty-canvas__card {
+  pointer-events: auto;
+  width: min(520px, calc(100vw - 48px));
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: var(--toolbar-bg);
+  border: 1px solid var(--toolbar-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.empty-canvas__card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--toolbar-text);
+}
+
+.empty-canvas__card p {
+  margin: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--toolbar-text-muted);
+}
+
+.empty-canvas__primary {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  background: var(--toolbar-primary-bg);
+  color: var(--toolbar-primary-text);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.empty-canvas__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.empty-canvas__preset {
+  border: 1px solid var(--toolbar-border);
+  background: var(--toolbar-icon-bg);
+  color: var(--toolbar-text);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.empty-canvas__preset:hover {
+  background: var(--toolbar-icon-bg-hover);
+}

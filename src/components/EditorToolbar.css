@@ -1,0 +1,221 @@
+.editor-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 14px;
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--toolbar-border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.editor-toolbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.editor-toolbar__logo-btn {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.editor-toolbar__logo-btn:hover .editor-toolbar__logo,
+.editor-toolbar__logo-btn:focus-visible .editor-toolbar__logo {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 124, 255, 0.36);
+}
+
+.editor-toolbar__logo-btn:focus-visible {
+  outline: 2px solid var(--toolbar-primary-bg);
+  outline-offset: 2px;
+}
+
+.editor-toolbar__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--toolbar-primary-bg), var(--toolbar-primary-bg-hover));
+  color: var(--toolbar-primary-text);
+  box-shadow: 0 2px 8px rgba(74, 124, 255, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.editor-toolbar__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.editor-toolbar__name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--toolbar-text);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.editor-toolbar__tagline {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--toolbar-text-muted);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.editor-toolbar__divider {
+  width: 1px;
+  height: 22px;
+  background: var(--toolbar-border);
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.editor-toolbar__group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.editor-toolbar__hint-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--toolbar-icon-text);
+  opacity: 0.72;
+  cursor: help;
+}
+
+.editor-toolbar__spacer {
+  flex: 1;
+  min-width: 8px;
+}
+
+.editor-toolbar__status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.editor-toolbar__zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--toolbar-icon-bg);
+  color: var(--toolbar-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: ui-monospace, Consolas, monospace;
+  letter-spacing: -0.02em;
+}
+
+.editor-toolbar__zoom svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.editor-toolbar__zoom-reset {
+  border: 1px solid var(--toolbar-border);
+  background: var(--toolbar-icon-bg);
+  color: var(--toolbar-text-muted);
+  border-radius: 8px;
+  padding: 0 8px;
+  height: 32px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.editor-toolbar__align-select {
+  height: 32px;
+  border: 1px solid var(--toolbar-border);
+  background: var(--toolbar-icon-bg);
+  color: var(--toolbar-text-muted);
+  border-radius: 8px;
+  font-size: 11px;
+  padding: 0 8px;
+}
+
+.editor-toolbar__menu-wrap {
+  position: relative;
+}
+
+.editor-toolbar__menu-wrap--open .toolbar-icon-btn {
+  background: var(--toolbar-icon-bg-hover);
+}
+
+.editor-toolbar__menu {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  min-width: 148px;
+  padding: 6px;
+  padding-top: 8px;
+  border-radius: 10px;
+  background: var(--menu-bg);
+  border: 1px solid var(--menu-border);
+  box-shadow: 0 12px 30px var(--menu-shadow);
+  z-index: 120;
+}
+
+.editor-toolbar__menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.editor-toolbar__menu button {
+  border: none;
+  background: transparent;
+  color: var(--toolbar-text);
+  text-align: left;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.editor-toolbar__menu button:hover {
+  background: var(--toolbar-icon-bg-hover);
+}
+
+@media (max-width: 860px) {
+  .editor-toolbar__tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .editor-toolbar__ports {
+    display: none;
+  }
+}
