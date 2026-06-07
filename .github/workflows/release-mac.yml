@@ -21,6 +21,9 @@ jobs:
 
       - name: Build macOS DMG
         run: npm run dist:mac
+        env:
+          # Only build artifacts in CI; upload via actions/upload-artifact (no GH_TOKEN publish).
+          CI: true
 
       - name: Upload DMG artifact
         uses: actions/upload-artifact@v4

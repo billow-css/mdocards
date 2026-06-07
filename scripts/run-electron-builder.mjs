@@ -14,7 +14,12 @@ if (env.NODE_TLS_REJECT_UNAUTHORIZED == null) {
   env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 }
 
-const result = spawnSync(process.execPath, [cli, ...process.argv.slice(2)], {
+const args = [...process.argv.slice(2)]
+if (!args.some((arg) => arg === '--publish' || arg.startsWith('--publish='))) {
+  args.push('--publish', 'never')
+}
+
+const result = spawnSync(process.execPath, [cli, ...args], {
   cwd: root,
   stdio: 'inherit',
   env,
